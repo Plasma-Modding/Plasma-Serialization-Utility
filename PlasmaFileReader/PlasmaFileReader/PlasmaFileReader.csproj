@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="FMODUnity">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\FMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnityResonance">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\FMODUnityResonance.dll</HintPath>
+    </Reference>
+    <Reference Include="OdinSerializer">
+      <HintPath>..\..\..\odin-serializer\Build\Assets\Plugins\Sirenix\Odin Serializer\AOT\OdinSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Rewired_Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Windows">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Rewired_Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Windows_Functions">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Rewired_Windows_Functions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.Serialization.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Tayx.Graphy">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Tayx.Graphy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
