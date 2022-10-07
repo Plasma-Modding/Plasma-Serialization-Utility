@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PlasmaFileEditor"
         mc:Ignorable="d"
         Title="Plasma File Editor" Height="450" Width="800">
     <Grid Background="#242121">
@@ -25,7 +24,7 @@
             </Button>
         </Grid>
         <Grid Grid.Row="1">
-            <Border Margin="10" BorderThickness="0.5" BorderBrush="Black">
+            <Border Margin="10" BorderThickness="0.5" BorderBrush="White">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled">
                     <TextBox Background="Transparent" Foreground="White" IsReadOnly="True" x:Name="Display" TextChanged="Display_TextChanged" AcceptsReturn="True" AcceptsTab="True">
                         

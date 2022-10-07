@@ -15,7 +15,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "E:\\Documents\\GitHub\\Plasma Utility\\Plasma Library\\PlasmaLibrary\\PlasmaLibrary.csproj",
-      "projectName": "PlasmaLibrary",
+      "projectName": "Assembly-CSharp",
       "projectPath": "E:\\Documents\\GitHub\\Plasma Utility\\Plasma Library\\PlasmaLibrary\\PlasmaLibrary.csproj",
       "packagesPath": "C:\\Users\\Matthew\\.nuget\\packages\\",
       "outputPath": "E:\\Documents\\GitHub\\Plasma Utility\\Plasma Library\\PlasmaLibrary\\obj\\",

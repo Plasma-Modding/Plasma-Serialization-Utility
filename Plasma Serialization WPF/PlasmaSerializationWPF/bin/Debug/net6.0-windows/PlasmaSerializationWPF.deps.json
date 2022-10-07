@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "PlasmaSerializationWPF/1.0.0": {
         "dependencies": {
+          "Assembly-CSharp": "1.0.0.0",
           "OdinSerializer": "1.0.0.0",
-          "PlasmaLibrary": "1.0.0.0",
           "UnityEngine.CoreModule": "0.0.0.0",
           "UnityEngine": "0.0.0.0",
           "UnityEngine.SharedInternalsModule": "0.0.0.0"
@@ -18,17 +18,17 @@
           "PlasmaSerializationWPF.dll": {}
         }
       },
-      "OdinSerializer/1.0.0.0": {
+      "Assembly-CSharp/1.0.0.0": {
         "runtime": {
-          "OdinSerializer.dll": {
+          "Assembly-CSharp.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
       },
-      "PlasmaLibrary/1.0.0.0": {
+      "OdinSerializer/1.0.0.0": {
         "runtime": {
-          "PlasmaLibrary.dll": {
+          "OdinSerializer.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -578,12 +578,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "OdinSerializer/1.0.0.0": {
+    "Assembly-CSharp/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "PlasmaLibrary/1.0.0.0": {
+    "OdinSerializer/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

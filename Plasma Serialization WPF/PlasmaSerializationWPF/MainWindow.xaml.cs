@@ -1,6 +1,5 @@
 ﻿using Microsoft.Win32;
 using OdinSerializer;
-using Plasma.Classes;
 using PlasmaSerializationWPF;
 using System;
 using System.Collections.Generic;
@@ -19,6 +18,7 @@ using System.Windows.Navigation;
 using DataFormat = OdinSerializer.DataFormat;
 using System.Windows.Shapes;
 using Path = System.IO.Path;
+using System.Reflection.Metadata;
 
 namespace PlasmaFileEditor
 {
@@ -42,7 +42,7 @@ namespace PlasmaFileEditor
             {
                 InitialDirectory = Util.GetBaseDir(),
                 CheckFileExists = true,
-                Filter = "Plasma Files|*.blueprint;*.metadata;*.world|Metadata|*.metadata|World|*.world|Blueprint|*.blueprint"
+                Filter = "Plasma Files|*.json;*.blueprint;*.metadata;*.world|Blueprint|*.blueprint|JSON|*.json|Metadata|*.metadata|World|*.world"
             };
             if (dialog.ShowDialog() == true)
             {
@@ -53,17 +53,20 @@ namespace PlasmaFileEditor
                 this.FileName = Path.GetFileName(path);
                 this.FilePath = path;
                 IPlasmaType file = null;
+                DataFormat df = DataFormat.Binary;
+                if (path.EndsWith("json"))
+                    df = DataFormat.JSON;
 
                 if (Directory.GetParent(path).Name.Equals("Devices"))
                 {
                     if (path.EndsWith("metadata"))
                     {
-                        file = SerializationUtility.DeserializeValue<SerializedDeviceMetaData>(File.ReadAllBytes(path), DataFormat.Binary, null);
+                        file = SerializationUtility.DeserializeValue<SerializedDeviceMetaData>(File.ReadAllBytes(path), df, null);
                         this.FileType = FileType.DeviceM;
                     }
                     else if (path.EndsWith("blueprint"))
                     {
-                        file = SerializationUtility.DeserializeValue<SerializedDeviceBlueprint>(File.ReadAllBytes(path), DataFormat.Binary, null);
+                        file = SerializationUtility.DeserializeValue<SerializedDeviceBlueprint>(File.ReadAllBytes(path), df, null);
                         this.FileType = FileType.Device;
                     }
                 }
@@ -71,23 +74,22 @@ namespace PlasmaFileEditor
                 {
                     if (path.EndsWith("metadata"))
                     {
-                        file = SerializationUtility.DeserializeValue<SerializedWorldMetaData>(File.ReadAllBytes(path), DataFormat.Binary, null);
+                        file = SerializationUtility.DeserializeValue<SerializedWorldMetaData>(File.ReadAllBytes(path), df, null);
                         this.FileType = FileType.WorldM;
                     }
                     else if (path.EndsWith("world"))
                     {
-                        file = SerializationUtility.DeserializeValue<SerializedWorld>(File.ReadAllBytes(path), DataFormat.Binary, null);
+                        file = SerializationUtility.DeserializeValue<SerializedWorld>(File.ReadAllBytes(path), df, null);
                         
                         this.FileType = FileType.World;
                     }
                 }
-
-                if (file is not null)
+                if(file is not null)
                     json = SerializationUtility.SerializeValue(file, DataFormat.JSON, null);
 
                 if (json is not null)
                 {
-                    this.Display.Text = Encoding.UTF8.GetString(json);
+                    this.Display.Text = Encoding.UTF8.GetString(json).Replace("System.Private.CoreLib", "mscorlib");
                     this.SaveAsButton.IsEnabled = true;
                     this.SaveButton.IsEnabled = false;
                     this.IsFileLoaded = true;
@@ -155,6 +157,7 @@ namespace PlasmaFileEditor
 
             IPlasmaType file = null;
 
+            
             switch(this.FileType)
             {
                 case FileType.DeviceM:
@@ -173,7 +176,10 @@ namespace PlasmaFileEditor
 
             if (file is not null)
                 json = SerializationUtility.SerializeValue(file, df, null);
-
+            
+            //object content = SerializationUtility.DeserializeValue<object>(Encoding.UTF8.GetBytes(Display.Text), DataFormat.JSON, null);
+            //json = SerializationUtility.SerializeValue(content, df, null);
+            
             if (json is not null)
             {
                 File.WriteAllBytes(path, json);

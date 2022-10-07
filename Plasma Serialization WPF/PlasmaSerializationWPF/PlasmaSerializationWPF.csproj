@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\Plasma Library\PlasmaLibrary\bin\Release\net6.0\Assembly-CSharp.dll</HintPath>
+    </Reference>
     <Reference Include="OdinSerializer">
       <HintPath>..\..\Libraries\OdinSerializer.dll</HintPath>
-    </Reference>
-    <Reference Include="PlasmaLibrary">
-      <HintPath>..\..\Plasma Library\PlasmaLibrary\bin\Release\net6.0\PlasmaLibrary.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\Plasma Library\PlasmaLibrary\bin\Release\net6.0\UnityEngine.dll</HintPath>

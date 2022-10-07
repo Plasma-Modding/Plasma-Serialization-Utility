@@ -82,9 +82,6 @@ E:\Documents\GitHub\PlasmaFileReader\Plasma Library\PlasmaLibrary\obj\Release\ne
 E:\Documents\GitHub\PlasmaFileReader\Plasma Library\PlasmaLibrary\obj\Release\net6.0\refint\PlasmaLibrary.dll
 E:\Documents\GitHub\PlasmaFileReader\Plasma Library\PlasmaLibrary\obj\Release\net6.0\PlasmaLibrary.pdb
 E:\Documents\GitHub\PlasmaFileReader\Plasma Library\PlasmaLibrary\obj\Release\net6.0\ref\PlasmaLibrary.dll
-E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\bin\Release\net6.0\PlasmaLibrary.deps.json
-E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\bin\Release\net6.0\PlasmaLibrary.dll
-E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\bin\Release\net6.0\PlasmaLibrary.pdb
 E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\bin\Release\net6.0\FMODUnity.dll
 E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\bin\Release\net6.0\FMODUnityResonance.dll
 E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\bin\Release\net6.0\Rewired_Core.dll
@@ -161,7 +158,10 @@ E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6
 E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\PlasmaLibrary.AssemblyInfo.cs
 E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\PlasmaLibrary.csproj.CoreCompileInputs.cache
 E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\PlasmaLibrary.csproj.CopyComplete
-E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\PlasmaLibrary.dll
-E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\refint\PlasmaLibrary.dll
-E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\PlasmaLibrary.pdb
-E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\ref\PlasmaLibrary.dll
+E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\bin\Release\net6.0\Assembly-CSharp.deps.json
+E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\bin\Release\net6.0\Assembly-CSharp.dll
+E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\bin\Release\net6.0\Assembly-CSharp.pdb
+E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\Assembly-CSharp.dll
+E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\refint\Assembly-CSharp.dll
+E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\Assembly-CSharp.pdb
+E:\Documents\GitHub\Plasma Utility\Plasma Library\PlasmaLibrary\obj\Release\net6.0\ref\Assembly-CSharp.dll

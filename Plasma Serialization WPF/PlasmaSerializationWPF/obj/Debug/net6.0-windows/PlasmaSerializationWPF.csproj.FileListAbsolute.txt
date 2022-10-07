@@ -5,7 +5,6 @@ E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationW
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\PlasmaSerializationWPF.dll
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\PlasmaSerializationWPF.pdb
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\OdinSerializer.dll
-E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\PlasmaLibrary.dll
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\UnityEngine.CoreModule.dll
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\UnityEngine.dll
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\UnityEngine.SharedInternalsModule.dll
@@ -73,11 +72,9 @@ E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationW
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\Sirenix.Utilities.dll
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\Unity.Timeline.dll
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\UnityEngine.UI.dll
-E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\PlasmaLibrary.pdb
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\obj\Debug\net6.0-windows\MainWindow.g.cs
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\obj\Debug\net6.0-windows\App.g.cs
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\obj\Debug\net6.0-windows\PlasmaSerializationWPF_MarkupCompile.cache
-E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\obj\Debug\net6.0-windows\PlasmaSerializationWPF_MarkupCompile.lref
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\obj\Debug\net6.0-windows\MainWindow.baml
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\obj\Debug\net6.0-windows\PlasmaSerializationWPF.g.resources
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\obj\Debug\net6.0-windows\PlasmaSerializationWPF.GeneratedMSBuildEditorConfig.editorconfig
@@ -90,3 +87,5 @@ E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationW
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\obj\Debug\net6.0-windows\PlasmaSerializationWPF.pdb
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\obj\Debug\net6.0-windows\PlasmaSerializationWPF.genruntimeconfig.cache
 E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\obj\Debug\net6.0-windows\ref\PlasmaSerializationWPF.dll
+E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\Assembly-CSharp.dll
+E:\Documents\GitHub\Plasma Utility\Plasma Serialization WPF\PlasmaSerializationWPF\bin\Debug\net6.0-windows\Assembly-CSharp.pdb

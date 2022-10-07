@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "PlasmaLibrary/1.0.0": {
+      "Assembly-CSharp/1.0.0": {
         "dependencies": {
           "FMODUnity": "0.0.0.0",
           "FMODUnityResonance": "0.0.0.0",
@@ -25,7 +25,7 @@
           "UnityEngine.SharedInternalsModule": "0.0.0.0"
         },
         "runtime": {
-          "PlasmaLibrary.dll": {}
+          "Assembly-CSharp.dll": {}
         }
       },
       "FMODUnity/0.0.0.0": {
@@ -591,7 +591,7 @@
     }
   },
   "libraries": {
-    "PlasmaLibrary/1.0.0": {
+    "Assembly-CSharp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
