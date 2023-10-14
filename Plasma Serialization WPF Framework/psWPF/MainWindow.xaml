@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Plasma File Editor" Height="450" Width="800"
         PreviewKeyDown="Window_PreviewKeyDown">
+    <Window.Resources>
+        <local:SpaceToDotConverter x:Key="SpaceToDotConverter" />
+    </Window.Resources>
     <Grid Background="#242121">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -43,7 +46,10 @@
                     </ListBox.Resources>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Text}" Background="Transparent"  Foreground="White" IsReadOnly="False" BorderThickness="0" />
+                            <DockPanel Background="Transparent">
+                                <TextBlock Text="{Binding LineNumber}" Foreground="White" Opacity="0.5" Margin="0,0,10,0"/>
+                                <TextBox TextChanged="Display_TextChanged" FontSize="16" Text="{Binding Text}" Background="Transparent" Foreground="White" IsReadOnly="False" BorderThickness="0" FontFamily="Global Monospace" />
+                            </DockPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

@@ -15,6 +15,9 @@ using DataFormat = OdinSerializer.DataFormat;
 using System.Threading.Tasks;
 using System.Windows.Threading;
 using System.Diagnostics;
+using UnityEngine;
+using System.Globalization;
+using System.Windows.Data;
 
 namespace Plasma_Serialization_WPF_Framework
 {
@@ -238,15 +241,31 @@ namespace Plasma_Serialization_WPF_Framework
                 this._text = value;
                 this.handle.Invoke(this.Lines.Clear);
                 StringBuilder currentLine = new StringBuilder();
+                int maxlen = this._text.Length;
+                int charLenLen = getLen(maxlen);
+                int getLen(int hhlen)
+                {
+                    int c = 0; int k = hhlen; while (k > 0) { k /= 10; c++; }
+                    return c;
+                }
+                string formatLen(int kklen)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    int jklen = getLen(kklen);
+                    sb.Append(kklen);
+                    sb.Insert(0, " ", charLenLen - jklen);
+                    return sb.ToString();
+                }
                 int cLen = 1;
+                int lnNum = 1;
                 foreach (char @char in this._text)
                 {
-                    if (@char == '\n' || cLen == this._text.Length)
+                    if (@char == '\n' || cLen == maxlen)
                     {
                         if (cLen == this._text.Length)
                             currentLine.Append(@char);
 
-                        var bl = new EfficientTextBlock { Text = currentLine.ToString().TrimEnd() };
+                        var bl = new EfficientTextBlock { LineNumber = formatLen(lnNum++), Text =currentLine.ToString().TrimEnd() };
                         this.handle.Invoke(() =>
                         {
                             this.Lines.Add(bl);
@@ -276,6 +295,24 @@ namespace Plasma_Serialization_WPF_Framework
             } 
         }
     }
+    public class SpaceToDotConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is string text)
+            {
+                return text.Replace(' ', '·');
+            }
+            return value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            // Implement this if you need two-way binding
+            // throw new NotImplementedException();
+            return value;
+        }
+    }
 
     public class EfficientTextBlock : INotifyPropertyChanged
     {
@@ -302,6 +339,8 @@ namespace Plasma_Serialization_WPF_Framework
                 OnPropertyChanged(nameof(IsReadOnly));
             }
         }
+
+        public string LineNumber { get; internal set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
