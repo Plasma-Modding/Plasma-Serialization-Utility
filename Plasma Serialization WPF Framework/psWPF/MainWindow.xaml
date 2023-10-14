@@ -43,7 +43,7 @@
                     </ListBox.Resources>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Text}" Background="Transparent"  Foreground="White" IsReadOnly="True" BorderThickness="0" />
+                            <TextBox Text="{Binding Text}" Background="Transparent"  Foreground="White" IsReadOnly="False" BorderThickness="0" />
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
