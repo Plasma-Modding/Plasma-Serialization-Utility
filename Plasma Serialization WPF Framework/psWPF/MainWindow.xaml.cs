@@ -2,15 +2,19 @@
 using OdinSerializer;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
-using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Linq;
 using DataFormat = OdinSerializer.DataFormat;
-using Path = System.IO.Path;
+using System.Threading.Tasks;
+using System.Windows.Threading;
+using System.Diagnostics;
 
 namespace Plasma_Serialization_WPF_Framework
 {
@@ -23,16 +27,13 @@ namespace Plasma_Serialization_WPF_Framework
         private string FileName = string.Empty;
         private string FilePath = string.Empty;
         private FileType FileType;
+        public NewTextBlock Display;
+
         public MainWindow()
         {
             InitializeComponent();
-            /*
-            string gamePath = GetPlasmaPath();
-            PlasmaAssembly = Assembly.LoadFrom($"{gamePath}\\Plasma_Data\\Managed\\Assembly-CSharp.dll");
-            UnityAssembly = Assembly.LoadFrom($"{gamePath}\\Plasma_Data\\Managed\\UnityEngine.CoreModule.dll");
-            SirenixAssembly = Assembly.LoadFrom($"{gamePath}\\Plasma_Data\\Managed\\Sirenix.Serialization.dll");
-            SirenixConfigAssembly = Assembly.LoadFrom($"{gamePath}\\Plasma_Data\\Managed\\Sirenix.Serialization.Config.dll");
-            */
+            this.Display = new NewTextBlock(this.Dispatcher);
+            this.TextViewer.ItemsSource = this.Display.Lines;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -88,7 +89,10 @@ namespace Plasma_Serialization_WPF_Framework
 
                 if (json != null)
                 {
-                    this.Display.Text = Encoding.UTF8.GetString(json);
+                    Task.Run(() =>
+                    { 
+                        this.Display.Text = Encoding.UTF8.GetString(json);
+                    });
                     this.SaveAsButton.IsEnabled = true;
                     this.SaveButton.IsEnabled = false;
                     this.IsFileLoaded = true;
@@ -200,21 +204,110 @@ namespace Plasma_Serialization_WPF_Framework
 
             return null;
         }
-        /*
-        public static Assembly PlasmaAssembly { get; private set; }
-        public static Assembly UnityAssembly { get; private set; }
-        public static Assembly SirenixAssembly { get; private set; }
-        public static Assembly SirenixConfigAssembly { get; private set; }
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.C && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                CopySelectedLines();
+            }
+        }
+        private void CopySelectedLines()
+        {
+            if (this.TextViewer.SelectedItems != null && this.TextViewer.SelectedItems.Count > 0)
+            {
+                var sortedSelectedItems = new List<EfficientTextBlock>(this.TextViewer.SelectedItems.Cast<EfficientTextBlock>())
+                                    .OrderBy(item => this.TextViewer.Items.IndexOf(item));
 
-        public static Type DeviceData => PlasmaAssembly.GetType("SerializedDeviceBlueprint");
-        public static Type DeviceMeta => PlasmaAssembly.GetType("SerializedDeviceMetaData");
+                string textToCopy = string.Join(Environment.NewLine, sortedSelectedItems.Select(item => item.Text));
+                Clipboard.SetText(textToCopy);
+            }
+        }
+    }
 
-        public static Type WorldData => PlasmaAssembly.GetType("SerializedWorld");
-        public static Type WorldMeta => PlasmaAssembly.GetType("SerializedWorldMetaData");
+    public class NewTextBlock
+    {
+        Dispatcher handle;
+        public NewTextBlock(Dispatcher dispatcher) => handle = dispatcher;
+        public ObservableCollection<EfficientTextBlock> Lines { get; private set; } = new ObservableCollection<EfficientTextBlock>();
+        private string _text;
+        public string Text 
+        {
+            get => this._text;
+            set
+            {
+                this._text = value;
+                this.handle.Invoke(this.Lines.Clear);
+                StringBuilder currentLine = new StringBuilder();
+                int cLen = 1;
+                foreach (char @char in this._text)
+                {
+                    if (@char == '\n' || cLen == this._text.Length)
+                    {
+                        if (cLen == this._text.Length)
+                            currentLine.Append(@char);
 
-        public static Type sSerializationUtility => SirenixAssembly.GetType("Sirenix.Serialization.SerializationUtility");
-        public static Type sDeserializationContext => SirenixAssembly.GetType("Sirenix.Serialization.DeserializationContext");
-        public static Type sDataFormat => SirenixConfigAssembly.GetType("Sirenix.Serialization.DataFormat");
-        */
+                        var bl = new EfficientTextBlock { Text = currentLine.ToString().TrimEnd() };
+                        this.handle.Invoke(() =>
+                        {
+                            this.Lines.Add(bl);
+                        });
+                        currentLine.Clear();
+                    }
+                    else
+                    {
+                        currentLine.Append(@char);
+                    }
+                    cLen++;
+                }
+            }
+        }
+        private bool _readOnly;
+        public bool IsReadOnly 
+        {
+            get => this._readOnly;
+            set
+            {
+                this._readOnly = value;
+
+                foreach(var line in this.Lines)
+                { 
+                    line.IsReadOnly = value;
+                }
+            } 
+        }
+    }
+
+    public class EfficientTextBlock : INotifyPropertyChanged
+    {
+        private string _textValue;
+
+        public string Text
+        {
+            get { return _textValue; }
+            set
+            {
+                _textValue = value;
+                OnPropertyChanged(nameof(Text));
+            }
+        }
+
+        private bool _readOnly;
+
+        public bool IsReadOnly
+        {
+            get { return _readOnly; }
+            set
+            {
+                _readOnly = value;
+                OnPropertyChanged(nameof(IsReadOnly));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
