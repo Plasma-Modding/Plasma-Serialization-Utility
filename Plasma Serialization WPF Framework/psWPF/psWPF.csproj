@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\Plasma Assembly-Csharp\Plasma Assembly-Csharp\bin\Release\Assembly-CSharp.dll</HintPath>
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="OdinSerializer">
       <HintPath>..\..\Libraries\OdinSerializer.dll</HintPath>
@@ -53,13 +53,13 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\Plasma Assembly-Csharp\Plasma Assembly-Csharp\bin\Release\UnityEngine.dll</HintPath>
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\Plasma Assembly-Csharp\Plasma Assembly-Csharp\bin\Release\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>..\..\Plasma Assembly-Csharp\Plasma Assembly-Csharp\bin\Release\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />

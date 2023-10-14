@@ -2,6 +2,7 @@
 using OdinSerializer;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -50,7 +51,7 @@ namespace Plasma_Serialization_WPF_Framework
 
                 this.FileName = Path.GetFileName(path);
                 this.FilePath = path;
-                IPlasmaType file = null;
+                object file = null;
                 DataFormat df = DataFormat.Binary;
                 if (path.EndsWith("json"))
                     df = DataFormat.JSON;
@@ -59,26 +60,25 @@ namespace Plasma_Serialization_WPF_Framework
                 {
                     if (path.EndsWith("metadata"))
                     {
-                        file = SerializationUtility.DeserializeValue<SerializedDeviceMetaData>(File.ReadAllBytes(path), df, null);
+                        file = SerializationUtility.DeserializeValue<SerializedDeviceMetaData>(File.ReadAllBytes(path), df);
                         this.FileType = FileType.DeviceM;
                     }
                     else if (path.EndsWith("blueprint"))
                     {
-                        file = SerializationUtility.DeserializeValue<SerializedDeviceBlueprint>(File.ReadAllBytes(path), df, null);
+                        file = SerializationUtility.DeserializeValue<SerializedDeviceBlueprint>(File.ReadAllBytes(path), df);
                         this.FileType = FileType.Device;
                     }
                 }
-                else if (Directory.GetParent(path).Name.Equals("Worlds"))
+                else if (Directory.GetParent(path).Parent.Name.Equals("Worlds"))
                 {
                     if (path.EndsWith("metadata"))
                     {
-                        file = SerializationUtility.DeserializeValue<SerializedWorldMetaData>(File.ReadAllBytes(path), df, null);
+                        file = SerializationUtility.DeserializeValue<SerializedWorldMetaData>(File.ReadAllBytes(path), df);
                         this.FileType = FileType.WorldM;
                     }
                     else if (path.EndsWith("world"))
                     {
-                        file = SerializationUtility.DeserializeValue<SerializedWorld>(File.ReadAllBytes(path), df, null);
-
+                        file = SerializationUtility.DeserializeValue<SerializedWorld>(File.ReadAllBytes(path), df);
                         this.FileType = FileType.World;
                     }
                 }
@@ -140,7 +140,7 @@ namespace Plasma_Serialization_WPF_Framework
             if (path.EndsWith("blueprint") || path.EndsWith("metadata") || path.EndsWith("world"))
                 df = DataFormat.Binary;
 
-            IPlasmaType file = null;
+            object file = null;
 
 
             switch (this.FileType)
